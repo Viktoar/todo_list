@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_12_14_104332) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.boolean "done"
+    t.boolean "done", default: false
     t.text "name"
     t.integer "order"
     t.bigint "list_id"

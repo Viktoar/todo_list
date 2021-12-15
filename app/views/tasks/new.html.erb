@@ -1,0 +1,12 @@
+<h1><%= list_tasks_path(@list, @task) %></h1>
+<div>
+	<%= form_with model: [:list, @task] do |f| %>
+	<%= f.hidden_field :list_id, value: @list.id %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit "Create task"%>
+	<% end %>
+
+</div>

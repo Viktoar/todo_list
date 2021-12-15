@@ -1,6 +1,3 @@
 class List < ApplicationRecord
-	def create
-	end
-	def delete
-	end
+	has_many :tasks, dependent: :destroy
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :lists do
+    resources :tasks
+  end
   root 'static_pages#home'
-  get 'new' => 'static_pages#new_todo_list'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
