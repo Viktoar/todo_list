@@ -1,3 +1,7 @@
 <div>
 	<%= render @lists %>
+	<%#= render @tasks %>
+	<div class="add_list" style="border: 2px solid blue; margin: 10px">
+		<%= link_to 'new list', new_list_path %>
+	</div>
 </div>

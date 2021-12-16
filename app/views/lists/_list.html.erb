@@ -1,5 +1,11 @@
-<div>
+<div style="border: 1px solid; margin: 10px" id="<%="list_#{list.id}"%>">
 	<%= link_to list.name, list %>
 	<%= link_to 'edit', edit_list_path(list) %>
 	<%= link_to 'delete', list, method: :delete %>
+	<!-- <div style="border: 2px solid green;">
+		<%#= link_to 'new task', new_list_task_path(list) %>
+	</div> -->
+	
+	<%= render list.tasks %>
+	<%= render partial:'tasks/new', locals:{task: list.tasks.new} %>
 </div>

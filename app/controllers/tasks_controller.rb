@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create!(task_params)
-    redirect_to @task.list
+    redirect_to lists_path
   end
 
   def edit
@@ -20,6 +20,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    Task.find(params[:id]).destroy
+    redirect_to List.find(params[:list_id])
   end
 
   def index
@@ -28,6 +30,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:done, :name, :list_id)
+    params.require(:task).permit(:done, :name, :list_id, :order)
   end
 end
