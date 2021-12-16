@@ -1,11 +1,20 @@
 class ListsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def new
     @list = List.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
-    list = List.create(list_params)
-    redirect_to list
+    @list = List.create(list_params)
+    @lists = List.all
+    respond_to do |format|
+      format.js
+    end
+    # redirect_to list
   end
 
   def show
@@ -32,7 +41,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
-    # @tasks = @list.tasks
+    #@tasks = Task.new
   end
 
   private

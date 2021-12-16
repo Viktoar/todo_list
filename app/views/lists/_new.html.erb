@@ -1,7 +1,6 @@
-<% provide(:title, 'New todo')%>
-<h1>New todo</h1>
 <div class="row">
-<%= form_for(@list) do |f| %>
+<%#= form_for(@list) do |f| %>
+<%= simple_form_for @list, action: :new, remote: true do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %>

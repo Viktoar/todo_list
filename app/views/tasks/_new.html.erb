@@ -1,11 +1,26 @@
-<div>
-	<%= form_with url: list_tasks_path(task.list, task), model: task, method: :post do |f| %>
+<!-- <div>
+	<%#= simple_form_for [task.list, task], action: :new, remote: true do |f| %>
+	<%#= form_with url: list_tasks_path(task.list, task), model: task, method: :post do |f| %>
 		<%#= form_for(task.list) do |f| %>
-		<%= f.hidden_field :list_id, value: task.list.id %>
+		<%#= f.hidden_field :token, value: task.list.id %>
+		<%#= task.list_id%>
+		<%#= f.hidden_field :list_id, value: task.list.id %>
 
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<%#= f.label :name %>
+		<%#= f.text_field :name %>
+		<%#= f.input :name, input_html: { placeholder: "Task name" } %>
 
-		<%= f.submit "Create task"%>
-	<% end %>
+		<%#= f.submit "Create task"%>
+	<%# end %>
+</div> -->
+<!-- <div>
+	<%#= simple_form_for [task.list, task], action: :new, remote: true do |f| %>
+	<%#= f.submit "Create task"%>
+</div> -->
+<div class="tasks">
+<%= render list.tasks %>
 </div>
+	<div class="new_task">
+		<%= link_to "New task", new_list_task_path(list), remote: true %>
+		<%#= render partial:'tasks/new', locals:{task: list.tasks.new} %>
+	</div>

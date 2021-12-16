@@ -1,12 +1,22 @@
 class TasksController < ApplicationController
+  # skip_before_action :verify_authenticity_token
+
   def new
     @list = List.find(params[:list_id])
     @task = @list.tasks.build
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
     @task = Task.create!(task_params)
-    redirect_to lists_path
+    # redirect_to lists_path
+    @list = List.find(params[:list_id])
+    p @list
+    respond_to do |format|
+      format.js
+    end
   end
 
   def edit
@@ -16,7 +26,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    redirect_to @task.list
+    redirect_to root_url
   end
 
   def destroy

@@ -1,0 +1,3 @@
+$("#list_<%= @list.id %> .new_task").remove();
+$("#list_<%= @list.id %> ")
+			.append("<%= j render partial:'tasks/form', locals:{task: @list.tasks.new} %>");
