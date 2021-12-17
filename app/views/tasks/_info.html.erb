@@ -1,0 +1,7 @@
+<div class="task_info">
+		<%= task.done %>
+		<%= task.name %>	
+		<%= task.order %>
+		<%= link_to 'edit', edit_list_task_path(task.list, task), remote: true %>
+		<%= link_to 'delete', list_task_path(task.list, task), method: :delete %>
+	</div>

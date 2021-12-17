@@ -1,0 +1,3 @@
+$(".task_<%= @task.id %> .task_edit").remove();
+$(".task_<%= @task.id %> ")
+			.append("<%= j render partial:'tasks/info', locals:{task: @task} %>");
