@@ -8,6 +8,7 @@
 
 		<%= f.label :name %>
 		<%= f.text_field :name %>
+		<%= f.input :deadline, as: :string, label: false, input_html: { placeholder: "Deadline", autocomplete: "off" } %>
 		<%#= f.input :name, input_html: { placeholder: "Task name" } %>
 
 		<%= f.submit "Create task"%>

@@ -1,3 +1,8 @@
-$(".list_<%= @list.id%> .task_info").remove();
-$(".task_<%= @task.id %> ")
-			.append("<%= j render partial:'tasks/edit', locals:{task: @task} %>");
+$("#list_<%= @list.id %> .tasks").remove();
+$("#list_<%= @list.id %> .new_task").remove();
+$("#list_<%= @list.id %>")
+			.append("<%= j render partial:'tasks/new' %>");
+$("#list_<%= @list.id%> .list_info").remove();
+$("#list_<%= @list.id %> ")
+			.prepend("<%= j render partial:'lists/edit'%>");
+

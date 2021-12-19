@@ -15,14 +15,16 @@
 //= require turbolinks
 //= require jquery
 //= require jquery-ui
+//= require datetimepicker
 //= require_tree .
 $(document).on("turbolinks:load", function() {
 $(".task-check").bind("change", function(){
 	console.log(this.value)
+  let array = this.value.split(" ")
     $.ajax({
-      url: "/tasks/toggle",
-      type: "POST",
-      data: {"done": this.checked, "id": this.value}
+      url: "/lists/" + array[0] + "/tasks/" + array[1],
+      type: "PUT",
+      data: { "task": {"done": this.checked} }
     });
   });
 });

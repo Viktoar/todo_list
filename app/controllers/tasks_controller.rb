@@ -27,19 +27,12 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    p params[:id]
     @task.update(task_params)
     @list = @task.list
     respond_to do |format|
       format.js
     end
-  end
-
-  def toggle
-    task = Task.find(params[:id])
-    task.update(done: params[:done])
-    # unless task.update(status: params[:status])
-    #   redirect_to user_project_path(id: project.id), notice: "Task not updated"
-    # end
   end
 
   def destroy
@@ -58,6 +51,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:done, :name, :list_id, :order)
+    params.require(:task).permit(:done, :name, :list_id, :order, :deadline)
   end
 end
+

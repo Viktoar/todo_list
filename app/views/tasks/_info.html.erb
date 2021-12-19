@@ -1,10 +1,13 @@
 <div class="task_info">
-		<%#= task.done %>
-		<%#= check_box("puppy", "commands", {:multiple => true}, "sit", nil) %>
-		<%= check_box_tag "name", task.id , task.done, :class => "task-check" %>
+		<%= check_box_tag "name", [task.list.id, task.id], task.done, :class => "task-check" %>
 		<%= task.done %>
 		<%= task.name %>	
 		<%= task.order %>
+		<% if task.deadline.present? %>
+			<%#= if Date.today + 1.days == task.deadline %>
+
+    	<%= "#{task.deadline.strftime("%d.%m.%Y %H:%M")}" %>
+     <% end %>
 		<%= link_to 'edit', edit_list_task_path(task.list, task), remote: true %>
 		<%= link_to 'delete', list_task_path(task.list, task), method: :delete, remote: true  %>
 	</div>
