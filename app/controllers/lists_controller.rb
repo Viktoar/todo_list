@@ -14,7 +14,6 @@ class ListsController < ApplicationController
     respond_to do |format|
       format.js
     end
-    # redirect_to list
   end
 
   def show
@@ -24,6 +23,7 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+    
   end
 
   def update
@@ -33,9 +33,7 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    
     List.find(params[:id]).destroy
-
     redirect_to lists_path
   end
 

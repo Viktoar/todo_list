@@ -18,9 +18,9 @@
 	<%#= f.submit "Create task"%>
 </div> -->
 <div class="tasks">
-<%= render list.tasks %>
+<%= render @list.tasks %>
 </div>
 	<div class="new_task">
-		<%= link_to "New task", new_list_task_path(list), remote: true %>
+		<%= link_to "New task", new_list_task_path(@list), remote: true %>
 		<%#= render partial:'tasks/new', locals:{task: list.tasks.new} %>
 	</div>

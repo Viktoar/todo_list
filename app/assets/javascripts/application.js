@@ -16,3 +16,13 @@
 //= require jquery
 //= require jquery-ui
 //= require_tree .
+$(document).on("turbolinks:load", function() {
+$(".task-check").bind("change", function(){
+	console.log(this.value)
+    $.ajax({
+      url: "/tasks/toggle",
+      type: "POST",
+      data: {"done": this.checked, "id": this.value}
+    });
+  });
+});

@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :list
   before_create :set_order
+  default_scope -> {order(:done).order(:order)}
 
   private
 

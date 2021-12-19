@@ -1,0 +1,5 @@
+$(".page .lists").remove();
+$(".page .row").remove();
+$(".page ")
+			.append("<%= j render partial:'lists/index', locals:{list: @lists}%>");
+			// <%= link_to list.name, list %>

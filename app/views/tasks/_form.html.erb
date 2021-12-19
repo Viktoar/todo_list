@@ -1,10 +1,10 @@
 <div class="new_task">
-	<%= simple_form_for [task.list, task], action: :new, remote: true do |f| %>
+	<%= simple_form_for [@task.list, @task], action: :new, remote: true do |f| %>
 	<%#= form_with url: list_tasks_path(task.list, task), model: task, method: :post do |f| %>
 		<%#= form_for(task.list) do |f| %>
-		<%= f.hidden_field :token, value: task.list.id %>
-		<%= task.list_id%>
-		<%= f.hidden_field :list_id, value: task.list.id %>
+		<%= f.hidden_field :token, value: @task.list.id %>
+		<%= @task.list_id%>
+		<%= f.hidden_field :list_id, value: @task.list.id %>
 
 		<%= f.label :name %>
 		<%= f.text_field :name %>

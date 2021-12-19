@@ -1,0 +1,5 @@
+<div class="list_info">
+	<%= link_to @list.name, @list %>
+	<%= link_to 'edit', edit_list_path(@list), remote: true %>
+	<%= link_to 'delete', @list, method: :delete %>
+</div>
