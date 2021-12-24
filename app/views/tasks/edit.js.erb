@@ -1,11 +1,13 @@
 $("#list_<%= @list.id %> .tasks").remove();
-$("#list_<%= @list.id %> .new_task").remove();
 $("#list_<%= @list.id %>")
 			.append("<%= j render partial:'tasks/new' %>");
-$("#task_<%= @task.id%> .task_info").remove();
+$("#task_<%= @task.id%> .tasks_item-checkbox").remove();
+$("#task_<%= @task.id%> .tasks_item-text").remove();
+$("#task_<%= @task.id%> .tasks_item-modify").remove();
 $("#task_<%= @task.id %> ")
 			.append("<%= j render partial:'tasks/edit', locals:{task: @task} %>");
 $(function () {
 	console.log("<%= @task.id %>")
-  $("#list_<%= @list.id %> .task_edit #edit_task_<%= @task.id %>").find('#task_deadline').datetimepicker({ format: 'd.m.Y H:i' });
+  $("#edit_task_<%= @task.id %> ").find('#task_deadline').datetimepicker({ format: 'd.m.Y H:i' });
+  $("#edit_task_<%= @task.id %> ").find('#task_name').focus();
 });

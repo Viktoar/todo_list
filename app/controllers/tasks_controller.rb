@@ -3,15 +3,13 @@ class TasksController < ApplicationController
 
   def new
     @list = List.find(params[:list_id])
-    respond_to do |format|
-      format.js
-    end
+    # @task = Task.new
+    p @task
   end
 
   def create
     @task = Task.create!(task_params)
     @list = List.find(params[:list_id])
-    p @list
     respond_to do |format|
       format.js
     end
@@ -42,7 +40,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.js
     end
-    # redirect_to List.find(params[:list_id])
   end
 
   def index

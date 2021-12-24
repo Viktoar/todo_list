@@ -1,16 +1,16 @@
 <div class="new_task">
-	<%= simple_form_for [@task.list, @task], action: :new, remote: true do |f| %>
+	<i class='fas fa-plus new_task-add'></i>
+	<%#= simple_form_for [@task.list, @task], action: :new, remote: true do |f| %>
+	<%= simple_form_for [@list, @task], html: { class: "new_task-form"}, action: :new, remote: true do |f| %>
 	<%#= form_with url: list_tasks_path(task.list, task), model: task, method: :post do |f| %>
-		<%#= form_for(task.list) do |f| %>
-		<%= f.hidden_field :token, value: @task.list.id %>
-		<%= @task.list_id%>
-		<%= f.hidden_field :list_id, value: @task.list.id %>
+		<%= f.hidden_field :token, value: @list.id %>
+		<%#= @task.list_id%>
+		<%= f.hidden_field :list_id, value: @list.id %>
 
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-		<%= f.input :deadline, as: :string, label: false, input_html: { placeholder: "Deadline", autocomplete: "off" } %>
-		<%#= f.input :name, input_html: { placeholder: "Task name" } %>
+		<%#= f.label :name %>
+		<%= f.text_field :name, class: "new_task-input", placeholder: "Start typing here to create a task" %>
+		<%= f.input :deadline, as: :string, label: false, input_html: {class: "new_task-deadline", placeholder: "Deadline", autocomplete: "off" } %>
 
-		<%= f.submit "Create task"%>
+		<%= f.submit "Create task", class: "new_task-btn" %>
 	<% end %>
 </div>

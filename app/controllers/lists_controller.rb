@@ -10,6 +10,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.create(list_params)
+    p @list.id 
     @lists = List.all
     respond_to do |format|
       format.js
@@ -34,12 +35,12 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @list.destroy
 
-    # redirect_to lists_path
   end
 
   def index
     @lists = List.all
-    #@tasks = Task.new
+    @task = Task.new
+    # @tasks = Task.new
   end
 
   private

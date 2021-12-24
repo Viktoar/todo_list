@@ -106,11 +106,9 @@ body {
     height: 50px;
     align-items: center;
     .title-icon{
-      display: block;
-      width: 40px;
-      height: 40px;
-      background-color: #fff;
       flex-shrink: 0;
+      font-size: 30px;
+      padding: 0px 10px;
     }
     .title-text{
       color: white;
@@ -119,35 +117,66 @@ body {
       // background-color: #fff;
     }
     .title-edit{
-      width: 40px;
+      font-size: 15px;
+      margin-right: 10px;
+      opacity: 0;
+      color: white;
     }
     .title-delete{
-      width: 40px;
+      border-left: 2px solid white;
+      padding-left: 15px;
+      font-size: 20px;
+      opacity: 0;
+      color: white;
+      margin-right: 20px;
+    }
+    .edit_list{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
-  .input{
+  .title:hover{
+    .title-edit{
+      opacity: 1;
+    }
+    .title-delete{
+      opacity: 1;
+    }
+  }
+  .new_task{
     background-color: #d4d4d4;
     display: flex;
     align-items: center;
-    height: 50px;
-    .input-add{
-      width: 40px;
-      height: 40px;
-      background-color: #fff;
-      flex-shrink: 0;
+    .new_task-add{
+      font-size: 30px;
+      color: green;
+      padding: 0px 10px;
+      // width: 40px;
+      // background-color: #fff;
+      // flex-shrink: 0;
     }
-    .input_task{
+    .new_task-form{
       width: 100%;
       height: 100%;
       padding: 10px 10px 10px 0;
       display: flex;
       margin-left: 5px;
-      .input-text{
+      .new_task-input{
         width: 100%;
-        padding-left: 5px;  
+        padding: 5px;
+        border: 1px solid black;
       }
-      .input-btn{
+      .new_task-deadline{
+       border: 1px solid black;
+       border-left: 0; 
+       padding: 5px 0px;
+      }
+      .new_task-btn{
         width: 150px;
+        background: green;
+        color: white;
       }
     }
   }
@@ -158,31 +187,101 @@ body {
     border: 1px solid rgba(0,0,0,0.3);
     .tasks_item{
       display: flex;
-      height: 50px;
+      // height: 50px;
+      // padding: 20px 0px;
+      align-items: stretch;
+      
       border-bottom: 1px solid rgba(0,0,0,0.3);
+      
       .tasks_item-checkbox{
         width: 40px;
         display: flex;
         align-items: center;
+        justify-content: center;
         border-right: 2px solid rgba(255,0,0,0.3);
         .tasks_item-check{
-          margin: 0 auto;
           border: black;
         }
       }
       
       .tasks_item-text{
         // height: 100%;
-        width: 100%;
+        width: 80%;
         border-left: 2px solid rgba(255,0,0,0.3);
+        // padding: 10px 0px;
         padding-left: 10px;
         margin-left: 5px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
         border-right: 1px solid rgba(0,0,0,0.3);
+        .task{
+          width: 80%;
+          padding: 10px 0;
+        }
+        .deadline{
+          width: 20%;
+          // display:none;
+          padding: 10px;
+          border-left: 1px solid rgba(0,0,0,0.3);
+          height: 100%;
+        }
       }
-      .task_item-modify{
-        width: 170px;
+      .tasks_item-modify{
+        // width: 170px;
+        width: 20%;
+        font-size: 15px;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .fas{
+          padding: 0 10px;
+          border-right: 1px solid gray;
+          color: gray;
+        }
+        
+        .task_item-edit{
+          // padding-left: 5px;
+          // border-left: 1px solid #000;
+        }
+        .task_item-delete{
+          // padding-left: 5px;
+          
+          .fas{
+           border-right: none; 
+          }
+        }
+      }
+      .edit_task{
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        #task_name{
+          margin-left: 30px;
+          width: 100%;
+          // border: 1px solid black;
+        }
+        input{
+          padding: 10px 0;
+        }
+        .deadline{
+          // border: 1px solid black;
+          // border-right: none; 
+          border-left: none;
+        }
+        .update{
+          background-color: green;
+          color: white;
+        }
+      }
+    }
+    .tasks_item:hover{
+      .tasks_item-modify{
+       opacity: 1; 
       }
     }
     .tasks_item:last-child{

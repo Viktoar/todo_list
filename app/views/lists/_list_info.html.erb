@@ -1,6 +1,12 @@
-<div class="list_info">
-	<%= link_to @list.name, @list %>
-	<%= link_to 'edit', edit_list_path(@list), remote: true %>
-	<%= p @list.id %>
-	<%= link_to 'delete', list_path(@list), method: :delete, remote: true %>
+<div class="title">
+	<i class="fas fa-calendar-alt title-icon"></i>
+	<h2 class="title-text"> 
+    <%= @list.name %>
+  </h2>
+	<%= link_to  edit_list_path(@list), remote: true do %>
+		<i class="fas fa-pen title-edit"></i>
+	<% end %>
+	<%= link_to  list_path(@list), method: :delete, remote: true do %>
+		<i class="fas fa-trash-alt title-delete"></i>
+	<% end %>
 </div>

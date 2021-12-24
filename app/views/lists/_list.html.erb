@@ -1,19 +1,12 @@
-<div style="border: 1px solid; margin: 10px" id="list_<%=list.id%>">
+<div id="list_<%=list.id%>" class="todo_list" style="margin: 10px" >
 	<% @list = list %>
 	<%= render partial:'lists/list_info' %>
-
-	<!-- <div style="border: 2px solid green;">
-		<%#= link_to 'new task', new_list_task_path(list) %>
-	</div> -->
-	
-	<%#= render list.tasks %>
-	<!-- <div class="new_task">
-		<%#= link_to "New task", new_list_task_path(list), remote: true%>
-		<%#= render partial:'tasks/new', locals:{task: list.tasks.new} %>
-	</div> -->
+	<%= render partial:'tasks/form' %>
 	<%= render partial:'tasks/new'  %>
-
-	<%#= render partial:'tasks/form', locals:{task: list.tasks.new} %>
-	<%#= render "tasks/new", project: list %>
-	
 </div>
+
+<script type="text/javascript">
+	$(function () {
+  $("#list_<%= @list.id %> .new_task #new_task").find('#task_deadline').datetimepicker({ format: 'd.m.Y H:i' });
+	});
+</script>
