@@ -1,71 +1,71 @@
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 *,
 *:before,
 *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :focus,
 :active {
-    outline: none;
+  outline: none;
 }
 a:focus,
 a:active {
-    outline: none;
+  outline: none;
 }
 
 nav,
 footer,
 header,
 aside {
-    display: block;
+  display: block;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    font-size: 100%;
-    line-height: 1;
-    font-size: 14px;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
-    font-family: inherit;
+  font-family: inherit;
 }
 
 input::-ms-clear {
-    display: none;
+  display: none;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 }
 a, a:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 ul li {
-    list-style: none;
+  list-style: none;
 }
 img {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 h1,
@@ -74,8 +74,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: inherit;
-    font-weight: 400;
+  font-size: inherit;
+  font-weight: 400;
 }
 /*--------------------*/
 
@@ -91,16 +91,19 @@ body {
 }
 
 .header {
-    .title {
-      text-align: center;
-      font-size: 30px;
-      font-weight: 800;
-    }
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+  }
 }
 
 .todo_list{
   .title{
-    background: $blue;
+    background: rgb(35,34,255) linear-gradient(rgb(35,34,255), rgb(3,1,200));
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
+                inset 0 1px 2px rgba(0,0,0,0), 
+                inset 0 0 0 60px rgba(255,255,0,0);
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -114,7 +117,6 @@ body {
       color: white;
       padding: 0 5px;
       width: 100%;
-      // background-color: #fff;
     }
     .title-edit{
       font-size: 15px;
@@ -135,6 +137,41 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      #list_name{
+        padding: 0 5px;
+        margin-bottom: -1px;
+        width: 100%;
+        font-size: inherit;
+        background-color: rgba(35,34,255,0);
+        color: white;
+        border-bottom: 1px solid black;
+      }
+      .edit_list-btn{
+        margin: 0 10px;
+        padding: 5px 5px;
+        border-radius: 7px;
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+        outline: none;
+        border: 1px solid rgb(0,0,0);
+        background: rgb(255,255,255) linear-gradient(rgb(255,255,255), rgb(210,210,210));
+        box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
+                    inset 0 1px 2px rgba(0,0,0,0), 
+                    inset 0 0 0 60px rgba(255,255,0,0);
+        transition: box-shadow .2s, border-color .2s;
+      }
+      .edit_list-btn:hover{
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,0), 
+                    inset 0 1px 2px rgba(0,0,0,0),
+                    inset 0 0 0 60px rgba(255,255,255,.5);
+      }
+      .edit_list-btn:active{
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,.1),
+                    inset 0 1px 2px rgba(0,0,0,.3),  
+                    inset 0 0 0 60px rgba(210,210,210,.45);
+      }
+      
     }
   }
   .title:hover{
@@ -153,9 +190,6 @@ body {
       font-size: 30px;
       color: green;
       padding: 0px 10px;
-      // width: 40px;
-      // background-color: #fff;
-      // flex-shrink: 0;
     }
     .new_task-form{
       width: 100%;
@@ -169,24 +203,47 @@ body {
         border: 1px solid black;
       }
       .new_task-deadline{
-       border: 1px solid black;
-       border-left: 0; 
-       padding: 5px 0px;
+        border: 1px solid black;
+        border-left: 0; 
+        padding: 5px 0px;
       }
       .new_task-btn{
         width: 150px;
-        background: green;
         color: white;
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+        outline: none;
+        border: 1px solid rgb(0,0,0);
+        border-left: none;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        background: rgb(61,179,72) linear-gradient(rgb(61,179,72), rgb(18,89,18));
+        box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
+                    inset 0 1px 2px rgba(0,0,0,0), 
+                    inset 0 0 0 60px rgba(255,255,0,0);
+        transition: box-shadow .2s, border-color .2s;
       }
-    }
+      .new_task-btn:hover{
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,0), 
+                    inset 0 1px 2px rgba(0,0,0,0),
+                    inset 0 0 0 60px rgba(61,179,65,.5);
+      }
+      .new_task-btn:active{
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,.1),
+                    inset 0 1px 2px rgba(0,0,0,.3),  
+                    inset 0 0 0 60px rgba(18,89,18,.45);
+      }
+    
   }
-  .tasks{
-    background-color: #fff;
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.3);
-    .tasks_item{
-      display: flex;
+}
+.tasks{
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.3);
+  .tasks_item{
+    display: flex;
       // height: 50px;
       // padding: 20px 0px;
       align-items: stretch;
@@ -251,26 +308,23 @@ body {
           
           .fas{
            border-right: none; 
-          }
-        }
-      }
-      .edit_task{
+         }
+       }
+     }
+     .edit_task{
+      width: 100%;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      #task_name{
+        margin-left: 30px;
         width: 100%;
-        padding: 0 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        #task_name{
-          margin-left: 30px;
-          width: 100%;
-          // border: 1px solid black;
         }
         input{
           padding: 10px 0;
         }
         .deadline{
-          // border: 1px solid black;
-          // border-right: none; 
           border-left: none;
         }
         .update{
@@ -282,26 +336,32 @@ body {
     .tasks_item:hover{
       .tasks_item-modify{
        opacity: 1; 
-      }
-    }
-    .tasks_item:last-child{
-      border-bottom: none;
-    }
+     }
+   }
+   .tasks_item:last-child{
+    border-bottom: none;
   }
+}
 }
 .add_list{
   .add_list-btn{
-    background-color: $blue;
+    background: rgb(35,34,255) linear-gradient(rgb(35,34,255), rgb(3,1,200));
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
+                inset 0 1px 2px rgba(0,0,0,0), 
+                inset 0 0 0 60px rgba(255,255,0,0);
     display: flex;
+    align-items: center;
     margin: 0 auto;
     max-width: 200px;
     height: 40px;
-    .add_list-svg{
-      width: 15%;
+    .add_list-icon{
+      font-size: 30px;
+      padding: 5px;
+      color: #02024b;
     }
     .add_list-text{
       color: white;
-      margin: auto 0;
+      margin-left: 10px;
       text-align: left;
       font-weight: bold;
     }

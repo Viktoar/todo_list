@@ -3,10 +3,10 @@
 	<h2 class="title-text"> 
     <%= @list.name %>
   </h2>
-	<%= link_to  edit_list_path(@list), remote: true do %>
-		<i class="fas fa-pen title-edit"></i>
+	<%= link_to  edit_list_path(@list), class: "title-edit", remote: true do %>
+		<i class="fas fa-pen "></i>
 	<% end %>
-	<%= link_to  list_path(@list), method: :delete, remote: true do %>
-		<i class="fas fa-trash-alt title-delete"></i>
+	<%= link_to  list_path(@list), class: "title-delete", method: :delete, remote: true do %>
+		<i class="fas fa-trash-alt "></i>
 	<% end %>
 </div>

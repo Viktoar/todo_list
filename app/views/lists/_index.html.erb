@@ -1,6 +1,11 @@
 	<div class="lists container">
 		<%= render @lists %>
 	</div>
-	<div class="add_list" style="border: 2px solid blue; margin: 10px">
-		<%= link_to 'new list', new_list_path, remote: true %>
+	<div class="add_list">
+		<div class="container ">
+			<div class="add_list-btn">
+			<i class='fas fa-plus add_list-icon'></i>
+			<%= link_to 'Add TODO List', new_list_path, class: "add_list-text", remote: true %>
+			</div>
+		</div>
 	</div>
