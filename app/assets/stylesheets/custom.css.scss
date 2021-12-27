@@ -112,6 +112,7 @@ body {
       flex-shrink: 0;
       font-size: 30px;
       padding: 0px 10px;
+      color: white;
     }
     .title-text{
       color: white;
@@ -125,7 +126,7 @@ body {
       color: white;
     }
     .title-delete{
-      border-left: 2px solid white;
+      border-left: 1px solid white;
       padding-left: 15px;
       font-size: 20px;
       opacity: 0;
@@ -205,7 +206,7 @@ body {
       .new_task-deadline{
         border: 1px solid black;
         border-left: 0; 
-        padding: 5px 0px;
+        padding: 5px 0px 5px 5px;
       }
       .new_task-btn{
         width: 150px;
@@ -283,6 +284,7 @@ body {
           padding: 10px;
           border-left: 1px solid rgba(0,0,0,0.3);
           height: 100%;
+          text-align: right;
         }
       }
       .tasks_item-modify{
@@ -313,25 +315,39 @@ body {
      }
      .edit_task{
       width: 100%;
-      padding: 0 10px;
+      padding: 10px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       #task_name{
         margin-left: 30px;
         width: 100%;
+        border-bottom: 1px solid black;
+        margin-right: 10px;
         }
-        input{
-          padding: 10px 0;
-        }
-        .deadline{
-          border-left: none;
-        }
-        .update{
-          background-color: green;
-          color: white;
-        }
+      .deadline{
+        border-left: none;
       }
+      .update{
+        background: rgb(35,34,255) linear-gradient(rgb(35,34,255), rgb(3,1,200));
+        box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
+                inset 0 1px 2px rgba(0,0,0,0), 
+                inset 0 0 0 60px rgba(255,255,0,0);
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .update:hover{
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,0), 
+                    inset 0 1px 2px rgba(0,0,0,0),
+                    inset 0 0 0 60px rgba(35,34,255,.5);
+      }
+      .update:active{
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,.1),
+                    inset 0 1px 2px rgba(0,0,0,.3),  
+                    inset 0 0 0 60px rgba(3,1,200,.45);
+      }
+     }
     }
     .tasks_item:hover{
       .tasks_item-modify{
@@ -345,10 +361,7 @@ body {
 }
 .add_list{
   .add_list-btn{
-    background: rgb(35,34,255) linear-gradient(rgb(35,34,255), rgb(3,1,200));
-    box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
-                inset 0 1px 2px rgba(0,0,0,0), 
-                inset 0 0 0 60px rgba(255,255,0,0);
+    
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -356,14 +369,26 @@ body {
     height: 40px;
     .add_list-icon{
       font-size: 30px;
-      padding: 5px;
+      padding-right: 10px;
       color: #02024b;
     }
     .add_list-text{
+      background: rgb(35,34,255) linear-gradient(rgb(35,34,255), rgb(3,1,200));
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0), 
+                inset 0 1px 2px rgba(0,0,0,0), 
+                inset 0 0 0 60px rgba(255,255,0,0);
+      display: flex;
+      align-items: center;
       color: white;
       margin-left: 10px;
-      text-align: left;
+      text-align: center;
       font-weight: bold;
+      height: 100%;
+      text-align: center;
+      padding: 0 10px;
+      p{
+        margin: auto 0;
+      }
     }
     
   }

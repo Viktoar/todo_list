@@ -4,8 +4,11 @@
 	<div class="add_list">
 		<div class="container ">
 			<div class="add_list-btn">
-			<i class='fas fa-plus add_list-icon'></i>
-			<%= link_to 'Add TODO List', new_list_path, class: "add_list-text", remote: true %>
+			
+			<%= link_to  new_list_path, class: "add_list-text", remote: true do %>
+				<i class='fas fa-plus add_list-icon'></i>
+				<p>Add TODO List</p>
+			<% end %>
 			</div>
 		</div>
 	</div>
