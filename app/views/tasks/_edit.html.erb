@@ -1,9 +1,9 @@
 <!-- <div class="task_edit"> -->
-	<%= simple_form_for [@task.list, @task], action: :update, remote: true do |f| %>
-	<%= f.hidden_field :list_id, value: @task.list.id %>
+	<%= simple_form_for [task.list, task], action: :update, remote: true do |f| %>
+	<%= f.hidden_field :list_id, value: task.list.id %>
 	<%= f.text_field :name %>
 	<div class="deadline">
-		<%= f.input :deadline, value: @task.deadline, as: :string, label: false, input_html: { placeholder: "Deadline", autocomplete: "off" } %>
+		<%= f.input :deadline, value: task.deadline, as: :string, label: false, input_html: { placeholder: "Deadline", autocomplete: "off" } %>
 	</div>
 	<%= f.submit "update task", class: "update"%>
 	<% end %>

@@ -1,11 +1,12 @@
 <div class="new_task">
 	<i class='fas fa-plus new_task-add'></i>
+	<%# p list.id  %>
 	<%#= simple_form_for [@task.list, @task], action: :new, remote: true do |f| %>
-	<%= simple_form_for [@list, @task], html: { class: "new_task-form"}, action: :new, remote: true do |f| %>
+	<%= simple_form_for [list, list.tasks.build], html: { class: "new_task-form"}, action: :new, remote: true do |f| %>
 	<%#= form_with url: list_tasks_path(task.list, task), model: task, method: :post do |f| %>
-		<%= f.hidden_field :token, value: @list.id %>
+		<%= f.hidden_field :token, value: list.id %>
 		<%#= @task.list_id%>
-		<%= f.hidden_field :list_id, value: @list.id %>
+		<%= f.hidden_field :list_id, value: list.id %>
 
 		<%#= f.label :name %>
 		<%= f.text_field :name, class: "new_task-input", placeholder: "Start typing here to create a task" %>

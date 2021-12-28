@@ -1,12 +1,13 @@
 <div id="list_<%=list.id%>" class="todo_list" style="margin: 10px" >
-	<% @list = list %>
-	<%= render partial:'lists/list_info' %>
-	<%= render partial:'tasks/form' %>
-	<%= render partial:'tasks/new'  %>
+	<%# @list = list %>
+	<%# p list.id  %>
+	<%= render 'lists/list_info', list: list %>
+	<%#= render 'tasks/form', list: list %>
+	<%= render partial:'tasks/new', locals:{list: list}  %>
 </div>
 
 <script type="text/javascript">
 	$(function () {
-  $("#list_<%= @list.id %> .new_task #new_task").find('#task_deadline').datetimepicker({ format: 'd.m.Y H:i' });
+  $("#list_<%= list.id %> .new_task #new_task").find('#task_deadline').datetimepicker({ format: 'd.m.Y H:i' });
 	});
 </script>

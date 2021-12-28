@@ -1,4 +1,5 @@
 	<div class="tasks_item-checkbox">
+		<%# p task.id %>
 		<%= check_box_tag "name", [task.list.id, task.id], task.done, :class => "tasks_item-check" %>
 	</div>
 	<div class="tasks_item-text">

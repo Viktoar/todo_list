@@ -1,10 +1,10 @@
-$("#list_<%= @list.id %> .tasks").remove();
-// $("#list_<%= @list.id %> .new_task").remove();
-$("#list_<%= @list.id %>")
+$("#list_<%= list.id %> .tasks").remove();
+// $("#list_<%#= @list.id %> .new_task").remove();
+$("#list_<%= list.id %>")
 			.append("<%= j render partial:'tasks/new' %>");
-$("#list_<%= @list.id%> .title-text").remove();
-$("#list_<%= @list.id%> .title-edit").remove();
-$("#list_<%= @list.id%> .title-delete").remove();
-$("#list_<%= @list.id%> .title")
+$("#list_<%= list.id%> .title-text").remove();
+$("#list_<%= list.id%> .title-edit").remove();
+$("#list_<%= list.id%> .title-delete").remove();
+$("#list_<%= list.id%> .title")
 			.append("<%= j render partial:'lists/edit'%>");
 

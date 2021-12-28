@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  expose :lists, -> { List.all }
+  expose :list
+
   def new
     @list = List.new
     respond_to do |format|
@@ -11,36 +14,41 @@ class ListsController < ApplicationController
   def create
     @list = List.create(list_params)
     p @list.id 
-    @lists = List.all
+    # @lists = List.all
     respond_to do |format|
       format.js
     end
   end
 
   def show
-    @list = List.find(params[:id])
-    @tasks = @list.tasks
+    # @list = List.find(params[:id])
+    # @tasks = @list.tasks
   end
 
   def edit
-    @list = List.find(params[:id])
+    # @list = List.find(params[:id])
   end
 
   def update
-    @list = List.find(params[:id])
-    @list.update(list_params)
+    # @list = List.find(params[:id])
+    list.update(list_params)
   end
 
   def destroy
-    @list = List.find(params[:id])
-    @list.destroy
+    # @list = List.find(params[:id])
+    list.destroy
 
   end
 
   def index
-    @lists = List.all
-    @task = Task.new
+    # @lists = List.all
+    # @task = Task.new
     # @tasks = Task.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    # respond_to  :js
   end
 
   private

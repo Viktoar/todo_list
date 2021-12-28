@@ -18,7 +18,7 @@
 //= require datetimepicker
 //= require_tree .
 $(document).on("turbolinks:load", function() {
-$(".task-check").bind("change", function(){
+$(".tasks_item-check").on("change", function(){
 	console.log(this.value)
   let array = this.value.split(" ")
     $.ajax({
