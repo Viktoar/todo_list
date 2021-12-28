@@ -17,8 +17,9 @@
 //= require jquery-ui
 //= require datetimepicker
 //= require_tree .
+
 $(document).on("turbolinks:load", function() {
-$(".tasks_item-check").on("change", function(){
+$("body").on("change", ".tasks_item-check" , function(){
 	console.log(this.value)
   let array = this.value.split(" ")
     $.ajax({

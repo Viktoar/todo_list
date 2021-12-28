@@ -44,11 +44,6 @@ class ListsController < ApplicationController
     # @lists = List.all
     # @task = Task.new
     # @tasks = Task.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
-    # respond_to  :js
   end
 
   private
