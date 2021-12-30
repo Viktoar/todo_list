@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :lists do
-    resources :tasks
+    resources :tasks do
+      collection { post :sort}
+    end
   end
   root 'lists#index'
   get 'static_pages/home'

@@ -2,11 +2,12 @@
 		<%# p task.id %>
 		<%= check_box_tag "name", [task.list.id, task.id], task.done, :class => "tasks_item-check" %>
 	</div>
-	<div class="tasks_item-text">
-		<div class="task">
+	<div class="tasks_item-text <%= task.deadline_info %>">
+		<div class="task ">
 			<%= task.name %> 
+			<%= task.order %> 
 		</div>
-		<div class="deadline">
+		<div class="deadline ">
 		<% if task.deadline.present? %>
     	<%= "#{task.deadline.strftime("%d.%m.%Y %H:%M")}" %>
      <% end %>

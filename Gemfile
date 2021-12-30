@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'decent_exposure'
 gem 'presenter-rails'
+gem 'acts_as_list'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

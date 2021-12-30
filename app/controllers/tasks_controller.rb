@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   def new
     # @list = List.find(params[:list_id])
     # @task = Task.new
-    p @task
+    # p @task
   end
 
   def create
@@ -46,13 +46,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def sort
+    params[:task].each_with_index do |id, index|
+      Task.find(id).update(order: index+1)
+    end
+  end
+
   def index
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:done, :name, :list_id, :order, :deadline)
+    params.require(:task).permit(:done, :name, :list_id, :deadline)
   end
 end
 

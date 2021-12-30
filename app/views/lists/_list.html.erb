@@ -2,7 +2,6 @@
 	<%# @list = list %>
 	<%# p list.id  %>
 	<%= render 'lists/list_info', list: list %>
-	<%#= render 'tasks/form', list: list %>
 	<%= render partial:'tasks/new', locals:{list: list}  %>
 </div>
 

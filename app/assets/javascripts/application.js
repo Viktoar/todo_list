@@ -12,20 +12,30 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery
 //= require jquery-ui
+
+//= require turbolinks
 //= require datetimepicker
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
-$("body").on("change", ".tasks_item-check" , function(){
-	console.log(this.value)
-  let array = this.value.split(" ")
-    $.ajax({
-      url: "/lists/" + array[0] + "/tasks/" + array[1],
-      type: "PUT",
-      data: { "task": {"done": this.checked} }
+  $("body").on("change", ".tasks_item-check" , function(){
+  	console.log(this.value)
+    let array = this.value.split(" ")
+      $.ajax({
+        url: "/lists/" + array[0] + "/tasks/" + array[1],
+        type: "PUT",
+        data: { "task": {"done": this.checked} }
+      });
     });
+$("body").on("mouseenter", ".handle" , function(){
+  $(".tasks").sortable({
+    axis: "y",
+    handle: ".handle",
+    update: function(){
+      $.post($(this).data("update-url"), $(this).sortable("serialize"));
+    }
+  });
   });
 });

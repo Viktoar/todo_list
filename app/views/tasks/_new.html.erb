@@ -3,7 +3,7 @@
 </div> -->
 <%# p @list %>
 <%#= render partial:'tasks/form', locals:{list: @list} %>
-<div class="tasks">
+<div class="tasks" data-update-url="<%= sort_list_tasks_path(list_id: list.id) %>" >
 	<%# p list.tasks %>
 	<%= render list.tasks %>
 </div> 
