@@ -22,9 +22,9 @@
 $(document).on("turbolinks:load", function() {
   $("body").on("change", ".tasks_item-check" , function(){
   	console.log(this.value)
-    let array = this.value.split(" ")
+    const path = this.value.split(" ")
       $.ajax({
-        url: "/lists/" + array[0] + "/tasks/" + array[1],
+        url: "/lists/" + path[0] + "/tasks/" + path[1],
         type: "PUT",
         data: { "task": {"done": this.checked} }
       });
