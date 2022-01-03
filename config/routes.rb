@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/new'
   resources :lists do
     resources :tasks do
       collection { post :sort}
