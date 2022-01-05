@@ -12,7 +12,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.create(list_params)
+    @list = current_user.lists.create(list_params)
+    # @task = list.tasks.create!(task_params)
     p @list.id 
     respond_to do |format|
       format.js

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
-  get 'users/new'
+  # get 'users/new'
   resources :users
   resources :lists do
     resources :tasks do
@@ -8,7 +7,6 @@ Rails.application.routes.draw do
     end
   end
   root 'lists#index'
-  get 'static_pages/home'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

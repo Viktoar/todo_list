@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  expose :lists, -> { List.all }
 
   def new
   end
@@ -8,10 +7,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      render 'lists/index'
+      # render 'lists/index'
+      redirect_to root_url
     else
       # flash.now[:danger] = 'Invalid email/password combination' 
-      render 'new'
+      render 'sessions/_new'
     end
   end
 

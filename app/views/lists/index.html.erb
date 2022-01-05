@@ -1,19 +1,13 @@
 <div class="page">
-	<%# p lists  %>
-	<%#= render partial:'lists/index'%>
-	<% if logged_in? %>
-  <div class="projects">
-    <%#= render current_user.lists %>
+	<% if logged_in? %> 
     <%= render partial:'lists/index'%>
-  </div>
-<% else %>
- <div class="welcome">
-   Hello, you must either
-   <%= link_to "register", users_new_path, class: "links" %>
-    or
-   <%= link_to "login", login_path, class: "links" %>
-    to create a new todo list.
- </div>
-<% end %>
-
+  <% else %>
+    <div class="welcome">
+      Hello, you must either
+      <%= link_to "register", new_user_path, class: "links", remote: true %>
+      or
+      <%= link_to "login", login_path, class: "links", remote: true %>
+      to create a new todo list.
+    </div>
+  <% end %>
 </div>

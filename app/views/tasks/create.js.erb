@@ -1,3 +1,6 @@
 $("#list_<%= list.id %> .tasks").remove();
+$("#list_<%= list.id %> .new_task").remove();
 $("#list_<%= list.id %> ")
 			.append("<%= j render partial:'tasks/new' %>");
+$("#list_<%=list.id%> .title")
+			.after("<%= j render 'tasks/form', list: list %>");
