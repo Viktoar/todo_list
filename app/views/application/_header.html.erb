@@ -1,0 +1,16 @@
+<header class="header">
+  <nav class="navbar", style="display: flex; justify-content: space-between;">
+    <div class="navbar-left">
+      <%= link_to "<i class='fal fa-home'></i>".html_safe , root_path, class: "link" %>
+    </div>
+    <div class="navbar-right">
+      <% if logged_in? %>
+        <%#= link_to "<i class='fal fa-user-circle'></i>".html_safe, edit_user_registration_path, class: "link" %>
+        <%= link_to "<i class='fal fa-sign-out-alt'></i>".html_safe, logout_path, class: "link", method: :delete %>
+      <% else %>
+        <%= link_to "Sign Up", users_new_path, class: "link" %>
+        <%= link_to "<i class='fal fa-sign-in-alt'></i>".html_safe, login_path, class: "link" %>
+      <% end %>
+    </div>
+  </nav>
+</header>
