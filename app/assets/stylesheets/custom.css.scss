@@ -473,9 +473,11 @@ body {
 }
 
 #new_list{
+  display: flex;
+  justify-content: space-between;
   #list_name{
-    width: 80%;
-    padding-left: 10px;
+    width: 100%;
+    padding: 10px;
   }
   .new_list-btn{
     background-color: $light_green;
