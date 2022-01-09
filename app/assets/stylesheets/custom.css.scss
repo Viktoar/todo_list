@@ -95,7 +95,6 @@ body {
 
 .header {
   background: $light_blue linear-gradient($light_blue, $dark_blue);
-  // height: 50px;
   .navbar{
     padding: 10px 50px;
   } 
@@ -323,8 +322,6 @@ body {
   border: 1px solid rgba(0,0,0,0.3);
   .tasks_item{
     display: flex;
-      // height: 50px;
-      // padding: 20px 0px;
       align-items: stretch;
       
       border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -341,10 +338,8 @@ body {
       }
       
       .tasks_item-text{
-        // height: 100%;
         width: 80%;
         border-left: 2px solid rgba(255,0,0,0.3);
-        // padding: 10px 0px;
         padding-left: 10px;
         margin-left: 5px;
         display: flex;
@@ -358,7 +353,6 @@ body {
         }
         .deadline{
           width: 20%;
-          // display:none;
           padding: 10px;
           border-left: 1px solid rgba(0,0,0,0.3);
           height: 100%;
@@ -366,7 +360,6 @@ body {
         }
       }
       .tasks_item-modify{
-        // width: 170px;
         width: 20%;
         font-size: 15px;
         opacity: 0;
@@ -379,13 +372,7 @@ body {
           color: gray;
         }
         
-        .task_item-edit{
-          // padding-left: 5px;
-          // border-left: 1px solid #000;
-        }
         .task_item-delete{
-          // padding-left: 5px;
-          
           .fas{
            border-right: none; 
          }
@@ -439,7 +426,6 @@ body {
 }
 .add_list{
   .add_list-btn{
-    
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -472,17 +458,44 @@ body {
   }
 }
 
+.x{
+    position:fixed;
+    top: 10%;
+    right: 10%;
+    font-size: 30px;
+    color: red;
+    z-index: 1;
+  }
+.x:hover{
+  cursor: pointer;
+}
+
 #new_list{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  margin: 0 auto;
+  .string{
+    font-size: 25px;
+    color: white;
+  }
   #list_name{
-    width: 100%;
+    width: 400px;
     padding: 10px;
+    margin: 20px 0;
   }
   .new_list-btn{
     background-color: $light_green;
     color: white;
     width:20%;
+    padding: 10px;
   }
   .new_list-btn:hover{
     background-color: $dark_green;

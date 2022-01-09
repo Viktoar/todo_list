@@ -1,5 +1,6 @@
 $(".page .lists").remove();
-// $(".page .row").remove();
+$(".add_list").remove();
 $("#new_list").remove();
+$(".x").remove();
 $(".page ")
 			.append("<%= j render partial:'lists/index', locals:{list: @lists}%>");

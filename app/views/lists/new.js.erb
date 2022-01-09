@@ -1,2 +1,7 @@
-$(".add_list").remove();
+$("body").css( 'overflow', 'hidden' )
 $(".page").append("<%= j render partial:'lists/new', locals:{list: @list} %>");
+$(".x").click( function() {
+	$("#new_list").remove();
+	$(".x").remove();
+	$("body").css( 'overflow', '' )
+});

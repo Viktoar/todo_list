@@ -1,10 +1,9 @@
-<div class="container">
+<div class="x">x</div>
 	<%= simple_form_for @list, class: "add_list-form", action: :new, remote: true do |f| %>
-
-	<%#= f.label :name %>
+	
+	<%= f.label "List Name"%>
 	
 	<%= f.text_field :name %>
 
 	<%= f.submit "Create todo list", class: 'new_list-btn'%>
 	<% end %>
-</div>
