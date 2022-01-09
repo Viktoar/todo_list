@@ -1,18 +1,18 @@
 <div class="new_user-form">
-<h1>Sign up</h1>
-<%= simple_form_for @user, class: "new_user-form", action: :new, remote: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <h1>Sign up</h1>
+  <%= simple_form_for @user, action: :new, remote: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name,  class: 'form-control' %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.submit "Create my account", class: "btn btn-primary" %>
-<% end %>
+    <%= f.submit "Create my account", class: "new_user-btn" %>
+  <% end %>
 </div>
